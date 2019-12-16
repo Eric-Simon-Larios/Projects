@@ -1,2 +1,2 @@
-# Bible-Stuff
+# Projects
 My personal reference for stuffs
