@@ -13,7 +13,8 @@ namespace Calculator
 
             Console.Write("Enter a number: ");
             string snum = Console.ReadLine();
-
+            
+            Console.WriteLine("Operators: + - / *");
             Console.Write("Pick a operator: ");
             string oper = Console.ReadLine();
 
