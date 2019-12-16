@@ -1,51 +1,62 @@
-﻿using System;
+using System;
 
 namespace Calculator
 {
-    class Calculator
+    class Program
     {
         static void Main(string[] args)
         {
             double answer;
+            string response;
+            response = "Y";
             answer = 0;
-            Console.Write("Enter a number: ");
-            string fnum=Console.ReadLine();
+            // To loop the whole program
+            while (response=="y" || response=="Y")
+            {
+                Console.Write("Enter a number: ");
+                string fnum = Console.ReadLine();
 
-            Console.Write("Enter a number: ");
-            string snum = Console.ReadLine();
-            
-            Console.WriteLine("Operators: + - / *");
-            Console.Write("Pick a operator: ");
-            string oper = Console.ReadLine();
+                Console.Write("Enter a number: ");
+                string snum = Console.ReadLine();
 
-            double num1 = Convert.ToDouble(fnum);
-            double num2 = Convert.ToDouble(snum);
+                Console.WriteLine("Operators: + - / *");
+                Console.Write("Pick a operator: ");
+                string oper = Console.ReadLine();
 
-            // Below are the solutions to determine which operator is used and what will happen if one of the conditions were satisfied
-            
-            if (oper == "+")
-            {
-                answer = num1 + num2;
-            }
-            else if (oper == "-")
-            {
-                answer = num1-num2;
-            }
-            else if (oper == "*")
-            {
-                answer = num1 * num2;
-            }
-            else if (oper == "/")
-            {
-                answer = num1 / num2;          
-            }
-            else
-            {
-                Console.Write("There is no such operator");
-            }
-            Console.Write(num1  + " " + oper + " " + num2 + " = " + answer);
+                double num1 = Convert.ToDouble(fnum);
+                double num2 = Convert.ToDouble(snum);
 
-            Console.ReadLine();
+                // Below are the solutions to determine which operator is used and what will happen if one of the conditions were satisfied
+
+                if (oper == "+")
+                {
+                    answer = num1 + num2;
+                }
+                else if (oper == "-")
+                {
+                    answer = num1 - num2;
+                }
+                else if (oper == "*")
+                {
+                    answer = num1 * num2;
+                }
+                else if (oper == "/")
+                {
+                    answer = num1 / num2;
+                }
+                else
+                {
+                    Console.WriteLine("There is no such operator");
+                    Console.Write("Do you want to try again? Y/N: ");
+                    response = Console.ReadLine();
+                    continue;
+                }
+                Console.WriteLine(num1 + " " + oper + " " + num2 + " = " + answer);
+
+                Console.Write("Do you want to try again? Y/N: ");
+                response=Console.ReadLine();
+            }
+           
         }
     }
 }
